@@ -31,3 +31,13 @@ A retail store requires a computer vision pipeline to count and track customers 
    ```bash
    git clone [https://github.com/Mittal-Sankalp/AWS-Project-Multi-Object-Tracking-Under-Occlusion.git](https://github.com/Mittal-Sankalp/AWS-Project-Multi-Object-Tracking-Under-Occlusion.git)
    cd your-repo-name
+## Instructions for Re-Running Evaluation
+Because this pipeline focuses on Multi-Object Tracking (MOT), evaluation measures identity consistency and tracking accuracy rather than just per-frame detection. 
+
+1. **Terminal Metric Logging:**
+   While running `main.py`, the script monitors active tracking IDs frame-by-frame. To log ID counts and monitor potential tracking switches during runtime, ensure your terminal output is active.
+2. **Benchmark Evaluation (Optional / Advanced):**
+   To compute official metrics like **MOTA (Multiple Object Tracking Accuracy)** and **ID Switches** against ground-truth annotations (e.g., MOT17 dataset format):
+   * Install the official evaluation toolkit: `pip install trackeval`
+   * Format your prediction text files into the standard MOT challenge structure.
+   * Run the evaluation script provided by TrackEval to generate your final metrics report.
