@@ -34,3 +34,6 @@ Unlike standard object detection (which uses mAP), Multi-Object Tracking relies 
 While testing under standard clips yields reliable performance, edge cases in production environments include:
 1. **Extended Occlusion:** If an occlusion exceeds the tracker's buffer length, the ID expires, creating a new ID upon reappearance. (Mitigation: Increase `track_buffer` or integrate appearance-based re-ID models like BoT-SORT).
 2. **Dense Crowding & Similar Appearance:** Spatial motion models can struggle when individuals wearing identical clothing cross paths at matching velocities. (Mitigation: Add appearance embeddings for color/clothing features).
+
+## 7. Results & Visualisation
+The pipeline processes video streams in real-time, overlays bounding boxes with persistent tracking IDs, saves the annotated trajectory output to `output_store.mp4`, and compiles operational metrics into `retail_tracking_analytics.xlsx`.
